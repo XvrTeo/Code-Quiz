@@ -106,22 +106,22 @@ var answerClick = function (event) {
     var userAnswer = event.target.textContent;
     correctAnswer = questions[currentQuestion].correct;
 
-    /* Is the answer right or wrong */
+    /* Is the answer right or wrong? If wrong, then subtract 5 seconds from timer. */
 
-    var answerDetermination = document.querySelector("#answer-right-or-wrong");
-    if (userAnswer !== correctAnswer) {
-        adjustTime(-5);
-        answerDetermination.textContent = "Incorrect!";
+    var answerIsWhat = document.querySelector("#answer-right-or-wrong");
+    if (userAnswer === correctAnswer) {
         currentQuestion++;
+        answerIsWhat.textContent = "CORRECT!";
+        userScore++;
         if (currentQuestion >= questions.length) {
             endQuizPage();
         } else { renderQuestion(questions[currentQuestion]) };
-
     }
-    else if (userAnswer === correctAnswer) {
+
+    else if (userAnswer !== correctAnswer) {
+        adjustTime(-5);
+        answerIsWhat.textContent = "INCORRECT!";
         currentQuestion++;
-        answerDetermination.textContent = "Correct!";
-        userScore++;
         if (currentQuestion >= questions.length) {
             endQuizPage();
         } else { renderQuestion(questions[currentQuestion]) };
@@ -141,9 +141,8 @@ function resetDisplay() {
 function highScores() {
     let data = localStorage.getItem("object");
     let getData = JSON.parse(data);
-    let name = getData.name;
     let score = getData.score;
-    questionContainer.innerHTML = "";
+    let name = getData.name;
     questionContainer.innerHTML = name + " " + score;
 }
 clickViewScores.addEventListener("click", () => {
@@ -180,11 +179,11 @@ function endQuizPage() {
         }
         storeInitials(initialBox.value, userScore);
 
-        var playAgain = document.createElement("button");
-        playAgain.textContent = "Try Again!";
-        blank.appendChild(playAgain);
+        var tryAgain = document.createElement("button");
+        tryAgain.textContent = "Try Again!";
+        blank.appendChild(tryAgain);
 
-        playAgain.addEventListener("click", () => {
+        tryAgain.addEventListener("click", () => {
             location.reload();
         })
     });

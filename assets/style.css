@@ -4,20 +4,21 @@ body {
     text-align: center;
 }
 
-.view-score {
-    border-radius: 50px;
-    padding: 5px;
-    margin: 5px;
-    color: darkred;
-    background-color: white;
-}
-
 button {
     border-radius: 50px;
-    padding: 15px;
+    padding: 30px;
+    margin: 5px;
+    color: whitesmoke;
+    font-size: larger;
+    background-color: green;
+}
+
+.view-score {
+    padding: 10px;
     margin: 5px;
     color: darkblue;
     background-color: white;
+    font-size: small;
 }
 
 .quiz-container button {
