@@ -6,7 +6,7 @@ The purpose of this exercise is to build a timed coding quiz with multiple-choic
 
 ### Screenshot:
 
-![Deployed Website](./Images/animation.gif)
+![Deployed Website](animation.gif)
 
 ### Links:
 
