@@ -10,6 +10,6 @@ The purpose of this exercise is to build a timed coding quiz with multiple-choic
 
 ### Links:
 
-https://xvrteo.github.io/
+https://xvrteo.github.io/Code-Quiz/
 
 https://github.com/XvrTeo/Code-Quiz
